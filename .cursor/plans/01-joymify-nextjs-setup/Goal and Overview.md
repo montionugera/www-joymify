@@ -50,13 +50,16 @@ A modern web application built with Next.js, Ant Design, and TypeScript.
 - [x] Proper routing structure implemented
 - [x] ESLint and Prettier configured
 - [x] TDD workflow established
+- [x] Design System & Theme Setup
 
 ## ✅ **Completed Epics:**
+
 - **EPIC-001**: Project Setup & Initialization
-- **EPIC-004**: Internationalization (i18n) Setup  
+- **EPIC-002**: Design System & Theme Setup
+- **EPIC-004**: Internationalization (i18n) Setup
 - **EPIC-005**: Testing Setup & TDD Infrastructure
 
 ## 🚀 **Next Steps:**
-1. **EPIC-002**: Design System & Theme Setup
-2. **EPIC-003**: Complete Google OAuth integration
-3. **EPIC-006**: Storybook setup for component documentation
+
+1. **EPIC-003**: Complete Google OAuth integration
+2. **EPIC-006**: Storybook setup for component documentation

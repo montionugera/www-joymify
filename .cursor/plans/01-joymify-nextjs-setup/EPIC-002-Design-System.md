@@ -1,120 +1,97 @@
-# 🎨 EPIC-002: Design System & Theme Setup
+# EPIC-002: Design System & Theme Setup
 
-## Epic Plan
+## 🎨 Epic Overview
 
-Create a comprehensive design system with custom Ant Design theme, reusable components, and Storybook documentation.
+Establish a comprehensive design system using Ant Design with custom theming, component library, and design tokens for consistent UI across the application.
 
-## 📋 Checklist
+## 📋 Epic Checklist
 
-### 1. Setup Ant Design Theme ⏳
+### 1. Design System Foundation
 
-- [ ] Create theme configuration file
-- [ ] Define custom color palette
-- [ ] Configure typography settings
-- [ ] Setup spacing and layout tokens
-- [ ] Create theme provider component
+- [x] Create design tokens (colors, typography, spacing, shadows)
+- [x] Setup Ant Design theme configuration
+- [x] Create base component styles
+- [x] Establish design system documentation
 
-### 2. Initialize Storybook ⏳
+### 2. Theme Configuration
 
-- [ ] Install Storybook for Next.js
-- [ ] Configure Storybook with Ant Design
-- [ ] Setup theme integration
-- [ ] Create basic story structure
-- [ ] Configure addons (controls, docs, etc.)
+- [x] Configure Ant Design theme provider
+- [x] Create light/dark theme variants
+- [x] Setup theme switching functionality
+- [x] Implement theme persistence
 
-### 3. Create Design System Components ⏳
+### 3. Component Library
 
-- [ ] Create Button component with variants
-- [ ] Create Typography components
-- [ ] Create Layout components
-- [ ] Create Form components
-- [ ] Create Navigation components
+- [x] Create base UI components
+- [x] Setup component variants
+- [x] Implement responsive design patterns
+- [x] Create component documentation
 
-### 4. Setup Component Documentation ⏳
+### 4. Design System Integration
 
-- [ ] Create component stories
-- [ ] Add usage examples
-- [ ] Document props and variants
-- [ ] Create design tokens documentation
-- [ ] Setup component testing
+- [x] Integrate with existing components
+- [x] Update home page with new design system
+- [x] Ensure accessibility compliance
+- [x] Test theme switching
 
-### 5. Theme Integration ⏳
+## 🎯 Success Criteria
 
-- [ ] Apply theme to Ant Design components
-- [ ] Create custom component wrappers
-- [ ] Setup CSS variables for theming
-- [ ] Test theme switching (if needed)
-- [ ] Validate accessibility
-
-## 🎯 Task Breakdown
-
-### Phase 1: Theme Foundation (Task 1)
-
-```typescript
-// src/theme/index.ts
-export const theme = {
-  token: {
-    colorPrimary: '#1890ff',
-    colorSuccess: '#52c41a',
-    colorWarning: '#faad14',
-    colorError: '#ff4d4f',
-    borderRadius: 6,
-    // ... more tokens
-  },
-};
-```
-
-### Phase 2: Storybook Setup (Task 2)
-
-```bash
-# Install Storybook
-npx storybook@latest init
-
-# Configure for Ant Design
-npm install -D @storybook/addon-styling
-```
-
-### Phase 3: Component Library (Tasks 3-4)
-
-- Create reusable components with TypeScript
-- Add comprehensive stories for each component
-- Include accessibility testing
-- Document usage patterns
-
-### Phase 4: Integration (Task 5)
-
-- Apply theme globally
-- Create component wrappers
-- Test theme consistency
-- Validate design tokens
+- [x] Custom Ant Design theme with design tokens
+- [x] Light/dark theme support with switching
+- [x] Base component library with variants
+- [x] Consistent design across all pages
+- [x] Theme persistence across sessions
+- [x] Accessibility compliance (WCAG 2.1)
 
 ## 📁 Expected File Structure
 
 ```
 src/
-├── theme/
-│   ├── index.ts
-│   ├── tokens.ts
-│   └── provider.tsx
-├── components/
-│   ├── ui/
+├── design-system/
+│   ├── tokens/
+│   │   ├── colors.ts
+│   │   ├── typography.ts
+│   │   ├── spacing.ts
+│   │   └── shadows.ts
+│   ├── themes/
+│   │   ├── light.ts
+│   │   ├── dark.ts
+│   │   └── index.ts
+│   ├── components/
 │   │   ├── Button/
-│   │   ├── Typography/
-│   │   └── Layout/
-│   └── design-system/
-├── stories/
-└── .storybook/
-    ├── main.ts
-    ├── preview.ts
-    └── manager.ts
+│   │   ├── Card/
+│   │   ├── Input/
+│   │   └── index.ts
+│   └── index.ts
+├── providers/
+│   └── ThemeProvider.tsx
+└── hooks/
+    └── useTheme.ts
 ```
 
-## 🎨 Design Tokens
+## 🚀 Implementation Steps
 
-- **Colors**: Primary, Secondary, Success, Warning, Error
-- **Typography**: Headings, Body, Caption, Button text
-- **Spacing**: 4px, 8px, 16px, 24px, 32px, 48px
-- **Border Radius**: 4px, 6px, 8px, 12px
-- **Shadows**: Small, Medium, Large
+### Phase 1: Foundation
 
-## �� Status: ⏳ Pending
+1. Create design tokens
+2. Setup theme configuration
+3. Create theme provider
+
+### Phase 2: Components
+
+1. Build base components
+2. Create component variants
+3. Implement responsive patterns
+
+### Phase 3: Integration
+
+1. Update existing components
+2. Test theme switching
+3. Validate accessibility
+
+## 📝 Notes
+
+- Use Ant Design's theme customization capabilities
+- Ensure TypeScript support for all design tokens
+- Follow WCAG 2.1 accessibility guidelines
+- Maintain consistency with existing i18n setup

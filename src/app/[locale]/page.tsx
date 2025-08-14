@@ -3,32 +3,27 @@
 import { Button, Typography, Layout, Space, Card, Row, Col } from 'antd';
 import {
   GoogleOutlined,
-  GlobalOutlined,
   RocketOutlined,
   SafetyOutlined,
   ThunderboltOutlined,
 } from '@ant-design/icons';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
-import { localeNames, localeFlags } from '@/lib/i18n/config';
+import { useParams } from 'next/navigation';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
+import type { Locale } from '@/lib/i18n/config';
 
 const { Title, Paragraph } = Typography;
 const { Header, Content, Footer } = Layout;
 
 const Home = () => {
   const t = useTranslations();
-  const router = useRouter();
+  const params = useParams();
+  const currentLocale = params.locale as Locale;
 
   const handleGoogleLogin = () => {
     // TODO: Implement Google OAuth
     // console.log('Google login clicked');
-  };
-
-  const handleLanguageChange = (locale: string) => {
-    const currentPath = window.location.pathname;
-    const segments = currentPath.split('/');
-    segments[1] = locale;
-    router.push(segments.join('/'));
   };
 
   const features = [
@@ -60,34 +55,8 @@ const Home = () => {
           </Title>
         </div>
         <Space>
-          <Button
-            type='text'
-            icon={<GlobalOutlined />}
-            onClick={() => handleLanguageChange('en')}
-          >
-            {localeFlags.en} {localeNames.en}
-          </Button>
-          <Button
-            type='text'
-            icon={<GlobalOutlined />}
-            onClick={() => handleLanguageChange('zh')}
-          >
-            {localeFlags.zh} {localeNames.zh}
-          </Button>
-          <Button
-            type='text'
-            icon={<GlobalOutlined />}
-            onClick={() => handleLanguageChange('ja')}
-          >
-            {localeFlags.ja} {localeNames.ja}
-          </Button>
-          <Button
-            type='text'
-            icon={<GlobalOutlined />}
-            onClick={() => handleLanguageChange('vi')}
-          >
-            {localeFlags.vi} {localeNames.vi}
-          </Button>
+          <LanguageSwitcher currentLocale={currentLocale} />
+          <ThemeSwitcher />
         </Space>
       </Header>
 
