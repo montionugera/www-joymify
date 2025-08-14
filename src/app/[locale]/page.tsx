@@ -1,7 +1,13 @@
 'use client';
 
 import { Button, Typography, Layout, Space, Card, Row, Col } from 'antd';
-import { GoogleOutlined, GlobalOutlined, RocketOutlined, SafetyOutlined, ThunderboltOutlined } from '@ant-design/icons';
+import {
+  GoogleOutlined,
+  GlobalOutlined,
+  RocketOutlined,
+  SafetyOutlined,
+  ThunderboltOutlined,
+} from '@ant-design/icons';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { localeNames, localeFlags } from '@/lib/i18n/config';
@@ -9,13 +15,13 @@ import { localeNames, localeFlags } from '@/lib/i18n/config';
 const { Title, Paragraph } = Typography;
 const { Header, Content, Footer } = Layout;
 
-export default function Home() {
+const Home = () => {
   const t = useTranslations();
   const router = useRouter();
 
   const handleGoogleLogin = () => {
     // TODO: Implement Google OAuth
-    console.log('Google login clicked');
+    // console.log('Google login clicked');
   };
 
   const handleLanguageChange = (locale: string) => {
@@ -27,7 +33,9 @@ export default function Home() {
 
   const features = [
     {
-      icon: <ThunderboltOutlined style={{ fontSize: '2rem', color: '#1890ff' }} />,
+      icon: (
+        <ThunderboltOutlined style={{ fontSize: '2rem', color: '#1890ff' }} />
+      ),
       title: t('home.features.feature1.title'),
       description: t('home.features.feature1.description'),
     },
@@ -44,35 +52,37 @@ export default function Home() {
   ];
 
   return (
-    <Layout className="min-h-screen">
-      <Header className="bg-white shadow-sm flex items-center justify-between px-6">
-        <div className="flex items-center">
-          <Title level={3} className="!mb-0 !text-blue-600">Joymify</Title>
+    <Layout className='min-h-screen'>
+      <Header className='bg-white shadow-sm flex items-center justify-between px-6'>
+        <div className='flex items-center'>
+          <Title level={3} className='!mb-0 !text-blue-600'>
+            Joymify
+          </Title>
         </div>
         <Space>
-          <Button 
-            type="text" 
+          <Button
+            type='text'
             icon={<GlobalOutlined />}
             onClick={() => handleLanguageChange('en')}
           >
             {localeFlags.en} {localeNames.en}
           </Button>
-          <Button 
-            type="text" 
+          <Button
+            type='text'
             icon={<GlobalOutlined />}
             onClick={() => handleLanguageChange('zh')}
           >
             {localeFlags.zh} {localeNames.zh}
           </Button>
-          <Button 
-            type="text" 
+          <Button
+            type='text'
             icon={<GlobalOutlined />}
             onClick={() => handleLanguageChange('ja')}
           >
             {localeFlags.ja} {localeNames.ja}
           </Button>
-          <Button 
-            type="text" 
+          <Button
+            type='text'
             icon={<GlobalOutlined />}
             onClick={() => handleLanguageChange('vi')}
           >
@@ -83,27 +93,27 @@ export default function Home() {
 
       <Content>
         {/* Hero Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <Title level={1} className="!text-white !mb-6">
+        <div className='bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20'>
+          <div className='max-w-6xl mx-auto px-6 text-center'>
+            <Title level={1} className='!text-white !mb-6'>
               {t('home.hero.title')}
             </Title>
-            <Paragraph className="!text-white !text-xl !mb-8 max-w-3xl mx-auto">
+            <Paragraph className='!text-white !text-xl !mb-8 max-w-3xl mx-auto'>
               {t('home.hero.subtitle')}
             </Paragraph>
-            <Space size="large">
-              <Button 
-                type="primary" 
-                size="large"
+            <Space size='large'>
+              <Button
+                type='primary'
+                size='large'
                 icon={<GoogleOutlined />}
                 onClick={handleGoogleLogin}
-                className="bg-white text-blue-600 border-white hover:bg-gray-100"
+                className='bg-white text-blue-600 border-white hover:bg-gray-100'
               >
                 {t('auth.continueWithGoogle')}
               </Button>
-              <Button 
-                size="large"
-                className="text-white border-white hover:bg-white hover:text-blue-600"
+              <Button
+                size='large'
+                className='text-white border-white hover:bg-white hover:text-blue-600'
               >
                 {t('home.hero.learnMore')}
               </Button>
@@ -112,26 +122,26 @@ export default function Home() {
         </div>
 
         {/* Features Section */}
-        <div className="py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <Title level={2} className="!mb-4">
+        <div className='py-20 bg-gray-50'>
+          <div className='max-w-6xl mx-auto px-6'>
+            <div className='text-center mb-16'>
+              <Title level={2} className='!mb-4'>
                 {t('home.features.title')}
               </Title>
-              <Paragraph className="!text-lg !text-gray-600">
+              <Paragraph className='!text-lg !text-gray-600'>
                 {t('home.features.subtitle')}
               </Paragraph>
             </div>
-            
+
             <Row gutter={[32, 32]}>
               {features.map((feature, index) => (
                 <Col xs={24} md={8} key={index}>
-                  <Card className="text-center h-full hover:shadow-lg transition-shadow">
-                    <div className="mb-4">{feature.icon}</div>
-                    <Title level={4} className="!mb-3">
+                  <Card className='text-center h-full hover:shadow-lg transition-shadow'>
+                    <div className='mb-4'>{feature.icon}</div>
+                    <Title level={4} className='!mb-3'>
                       {feature.title}
                     </Title>
-                    <Paragraph className="!text-gray-600">
+                    <Paragraph className='!text-gray-600'>
                       {feature.description}
                     </Paragraph>
                   </Card>
@@ -142,20 +152,20 @@ export default function Home() {
         </div>
 
         {/* CTA Section */}
-        <div className="py-20 bg-blue-600 text-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <Title level={2} className="!text-white !mb-4">
+        <div className='py-20 bg-blue-600 text-white'>
+          <div className='max-w-4xl mx-auto px-6 text-center'>
+            <Title level={2} className='!text-white !mb-4'>
               {t('home.cta.title')}
             </Title>
-            <Paragraph className="!text-white !text-lg !mb-8">
+            <Paragraph className='!text-white !text-lg !mb-8'>
               {t('home.cta.subtitle')}
             </Paragraph>
-            <Button 
-              type="primary" 
-              size="large"
+            <Button
+              type='primary'
+              size='large'
               icon={<GoogleOutlined />}
               onClick={handleGoogleLogin}
-              className="bg-white text-blue-600 border-white hover:bg-gray-100"
+              className='bg-white text-blue-600 border-white hover:bg-gray-100'
             >
               {t('home.cta.button')}
             </Button>
@@ -163,11 +173,13 @@ export default function Home() {
         </div>
       </Content>
 
-      <Footer className="text-center bg-gray-800 text-white">
-        <Paragraph className="!text-white !mb-0">
+      <Footer className='text-center bg-gray-800 text-white'>
+        <Paragraph className='!text-white !mb-0'>
           © 2024 Joymify. {t('common.welcome')}
         </Paragraph>
       </Footer>
     </Layout>
   );
-}
+};
+
+export default Home;

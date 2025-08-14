@@ -1,42 +1,48 @@
 # 🏠 EPIC-003: Home Page & Authentication
 
 ## Epic Plan
+
 Build a beautiful home page with Google OAuth integration, responsive design, and proper user experience.
 
 ## 📋 Checklist
 
-### 1. Setup Authentication Infrastructure ⏳
+### 1. Setup Authentication Infrastructure 🚧
+
 - [ ] Install Google OAuth dependencies
 - [ ] Configure Google OAuth credentials
 - [ ] Create authentication context/provider
 - [ ] Setup authentication hooks
 - [ ] Create authentication utilities
-- [ ] Setup i18n for auth messages
+- [x] Setup i18n for auth messages
 
-### 2. Design Home Page Layout ⏳
-- [ ] Create responsive layout component
-- [ ] Design hero section
-- [ ] Add navigation header with language switcher
-- [ ] Create footer component
-- [ ] Implement mobile-first design
-- [ ] Setup locale-based routing
+### 2. Design Home Page Layout ✅
 
-### 3. Implement Google Login ⏳
-- [ ] Create login button component
+- [x] Create responsive layout component
+- [x] Design hero section
+- [x] Add navigation header with language switcher
+- [x] Create footer component
+- [x] Implement mobile-first design
+- [x] Setup locale-based routing
+
+### 3. Implement Google Login 🚧
+
+- [x] Create login button component
 - [ ] Implement Google OAuth flow
 - [ ] Handle authentication states
 - [ ] Add loading states
 - [ ] Implement error handling
 
-### 4. Add Home Page Content ⏳
-- [ ] Create compelling hero content (multilingual)
-- [ ] Add feature highlights (multilingual)
-- [ ] Include call-to-action sections (multilingual)
-- [ ] Add testimonials or social proof (multilingual)
-- [ ] Implement smooth animations
-- [ ] Setup translation files for all content
+### 4. Add Home Page Content ✅
+
+- [x] Create compelling hero content (multilingual)
+- [x] Add feature highlights (multilingual)
+- [x] Include call-to-action sections (multilingual)
+- [x] Add testimonials or social proof (multilingual)
+- [x] Implement smooth animations
+- [x] Setup translation files for all content
 
 ### 5. Testing & Optimization ⏳
+
 - [ ] Write unit tests for components
 - [ ] Test authentication flow
 - [ ] Optimize performance
@@ -46,6 +52,7 @@ Build a beautiful home page with Google OAuth integration, responsive design, an
 ## 🎯 Task Breakdown
 
 ### Phase 1: Auth Setup (Task 1)
+
 ```bash
 # Install auth dependencies
 npm install next-auth @auth/google-provider
@@ -62,7 +69,7 @@ export const authConfig = {
     }),
   ],
   // ... config
-}
+};
 
 // src/lib/i18n/config.ts
 export const locales = ['en', 'zh', 'ja', 'vi'] as const;
@@ -70,6 +77,7 @@ export const defaultLocale = 'en' as const;
 ```
 
 ### Phase 2: Layout & Design (Task 2)
+
 - Create responsive layout with Ant Design
 - Implement mobile-first approach
 - Add proper navigation structure with language switcher
@@ -77,15 +85,16 @@ export const defaultLocale = 'en' as const;
 - Setup locale-based routing with [locale] dynamic route
 
 ### Phase 3: Login Implementation (Task 3)
+
 ```typescript
 // src/components/auth/GoogleLoginButton.tsx
 export const GoogleLoginButton = () => {
   const { signIn, status } = useSession();
   const t = useTranslations('auth');
-  
+
   return (
-    <Button 
-      type="primary" 
+    <Button
+      type="primary"
       size="large"
       icon={<GoogleOutlined />}
       onClick={() => signIn('google')}
@@ -98,6 +107,7 @@ export const GoogleLoginButton = () => {
 ```
 
 ### Phase 4: Content & Polish (Tasks 4-5)
+
 - Add compelling multilingual content
 - Implement smooth animations
 - Test across devices and languages
@@ -105,6 +115,7 @@ export const GoogleLoginButton = () => {
 - Setup translation files for all supported languages
 
 ## 📁 Expected File Structure
+
 ```
 src/
 ├── app/
@@ -143,6 +154,7 @@ src/
 ```
 
 ## 🎨 Design Requirements
+
 - **Hero Section**: Eye-catching with clear value proposition (multilingual)
 - **Login Button**: Prominent, accessible, with Google branding (multilingual)
 - **Language Switcher**: Easy access to all supported languages
@@ -152,6 +164,7 @@ src/
 - **RTL Support**: Consider right-to-left languages if needed
 
 ## 🔐 Authentication Flow
+
 1. User clicks "Continue with Google"
 2. Redirect to Google OAuth
 3. User authorizes application

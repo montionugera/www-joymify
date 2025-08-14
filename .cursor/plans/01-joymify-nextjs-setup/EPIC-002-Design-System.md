@@ -1,11 +1,13 @@
 # 🎨 EPIC-002: Design System & Theme Setup
 
 ## Epic Plan
+
 Create a comprehensive design system with custom Ant Design theme, reusable components, and Storybook documentation.
 
 ## 📋 Checklist
 
 ### 1. Setup Ant Design Theme ⏳
+
 - [ ] Create theme configuration file
 - [ ] Define custom color palette
 - [ ] Configure typography settings
@@ -13,6 +15,7 @@ Create a comprehensive design system with custom Ant Design theme, reusable comp
 - [ ] Create theme provider component
 
 ### 2. Initialize Storybook ⏳
+
 - [ ] Install Storybook for Next.js
 - [ ] Configure Storybook with Ant Design
 - [ ] Setup theme integration
@@ -20,6 +23,7 @@ Create a comprehensive design system with custom Ant Design theme, reusable comp
 - [ ] Configure addons (controls, docs, etc.)
 
 ### 3. Create Design System Components ⏳
+
 - [ ] Create Button component with variants
 - [ ] Create Typography components
 - [ ] Create Layout components
@@ -27,6 +31,7 @@ Create a comprehensive design system with custom Ant Design theme, reusable comp
 - [ ] Create Navigation components
 
 ### 4. Setup Component Documentation ⏳
+
 - [ ] Create component stories
 - [ ] Add usage examples
 - [ ] Document props and variants
@@ -34,6 +39,7 @@ Create a comprehensive design system with custom Ant Design theme, reusable comp
 - [ ] Setup component testing
 
 ### 5. Theme Integration ⏳
+
 - [ ] Apply theme to Ant Design components
 - [ ] Create custom component wrappers
 - [ ] Setup CSS variables for theming
@@ -43,6 +49,7 @@ Create a comprehensive design system with custom Ant Design theme, reusable comp
 ## 🎯 Task Breakdown
 
 ### Phase 1: Theme Foundation (Task 1)
+
 ```typescript
 // src/theme/index.ts
 export const theme = {
@@ -53,11 +60,12 @@ export const theme = {
     colorError: '#ff4d4f',
     borderRadius: 6,
     // ... more tokens
-  }
-}
+  },
+};
 ```
 
 ### Phase 2: Storybook Setup (Task 2)
+
 ```bash
 # Install Storybook
 npx storybook@latest init
@@ -67,18 +75,21 @@ npm install -D @storybook/addon-styling
 ```
 
 ### Phase 3: Component Library (Tasks 3-4)
+
 - Create reusable components with TypeScript
 - Add comprehensive stories for each component
 - Include accessibility testing
 - Document usage patterns
 
 ### Phase 4: Integration (Task 5)
+
 - Apply theme globally
 - Create component wrappers
 - Test theme consistency
 - Validate design tokens
 
 ## 📁 Expected File Structure
+
 ```
 src/
 ├── theme/
@@ -99,6 +110,7 @@ src/
 ```
 
 ## 🎨 Design Tokens
+
 - **Colors**: Primary, Secondary, Success, Warning, Error
 - **Typography**: Headings, Body, Caption, Button text
 - **Spacing**: 4px, 8px, 16px, 24px, 32px, 48px

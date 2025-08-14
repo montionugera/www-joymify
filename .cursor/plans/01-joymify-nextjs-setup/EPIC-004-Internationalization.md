@@ -1,11 +1,13 @@
 # 🌍 EPIC-004: Internationalization (i18n) Setup
 
 ## Epic Plan
+
 Implement comprehensive internationalization support for English, Chinese, Japanese, and Vietnamese with proper routing and content management.
 
 ## 📋 Checklist
 
 ### 1. Setup Next.js i18n Configuration ⏳
+
 - [ ] Configure next.config.js for i18n
 - [ ] Setup locale detection middleware
 - [ ] Create locale routing structure
@@ -13,6 +15,7 @@ Implement comprehensive internationalization support for English, Chinese, Japan
 - [ ] Setup locale validation
 
 ### 2. Install & Configure i18n Dependencies ⏳
+
 - [ ] Install next-intl library
 - [ ] Configure next-intl provider
 - [ ] Setup translation utilities
@@ -20,6 +23,7 @@ Implement comprehensive internationalization support for English, Chinese, Japan
 - [ ] Configure TypeScript for i18n
 
 ### 3. Create Translation Files ⏳
+
 - [ ] Create English translations (en.json)
 - [ ] Create Chinese translations (zh.json)
 - [ ] Create Japanese translations (ja.json)
@@ -27,6 +31,7 @@ Implement comprehensive internationalization support for English, Chinese, Japan
 - [ ] Setup translation validation
 
 ### 4. Implement Language Switcher ⏳
+
 - [ ] Create LanguageSwitcher component
 - [ ] Implement locale switching logic
 - [ ] Add language flags/icons
@@ -34,6 +39,7 @@ Implement comprehensive internationalization support for English, Chinese, Japan
 - [ ] Add language persistence
 
 ### 5. Setup Route Structure ⏳
+
 - [ ] Create [locale] dynamic route
 - [ ] Setup route groups for organization
 - [ ] Implement locale-based navigation
@@ -43,6 +49,7 @@ Implement comprehensive internationalization support for English, Chinese, Japan
 ## 🎯 Task Breakdown
 
 ### Phase 1: Configuration (Tasks 1-2)
+
 ```typescript
 // next.config.js
 const withNextIntl = require('next-intl/plugin')();
@@ -54,10 +61,11 @@ module.exports = withNextIntl({
 // src/lib/i18n/config.ts
 export const locales = ['en', 'zh', 'ja', 'vi'] as const;
 export const defaultLocale = 'en' as const;
-export type Locale = typeof locales[number];
+export type Locale = (typeof locales)[number];
 ```
 
 ### Phase 2: Translation Setup (Task 3)
+
 ```json
 // src/lib/i18n/locales/en.json
 {
@@ -81,16 +89,17 @@ export type Locale = typeof locales[number];
 ```
 
 ### Phase 3: Components (Task 4)
+
 ```typescript
 // src/components/layout/LanguageSwitcher.tsx
 export const LanguageSwitcher = () => {
   const { locale, pathname, push } = useRouter();
   const { t } = useTranslations('common');
-  
+
   const handleLanguageChange = (newLocale: string) => {
     push(pathname, { locale: newLocale });
   };
-  
+
   return (
     <Dropdown menu={{ items: languageOptions }}>
       <Button icon={<GlobalOutlined />}>
@@ -102,6 +111,7 @@ export const LanguageSwitcher = () => {
 ```
 
 ### Phase 4: Routing (Task 5)
+
 ```typescript
 // src/app/[locale]/layout.tsx
 export default function LocaleLayout({
@@ -120,6 +130,7 @@ export default function LocaleLayout({
 ```
 
 ## 📁 Expected File Structure
+
 ```
 src/
 ├── app/
@@ -148,18 +159,21 @@ src/
 ```
 
 ## 🌍 Supported Languages
+
 - **English (en)**: Default language
 - **Chinese (zh)**: Simplified Chinese
 - **Japanese (ja)**: Japanese
 - **Vietnamese (vi)**: Vietnamese
 
 ## 🔧 Configuration Files
+
 - **next.config.js**: i18n configuration
 - **middleware.ts**: Locale detection and routing
 - **src/lib/i18n/config.ts**: i18n constants and types
 - **src/lib/i18n/utils.ts**: Translation utilities
 
 ## 📝 Translation Structure
+
 ```json
 {
   "common": {
