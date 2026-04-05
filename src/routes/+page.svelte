@@ -18,7 +18,6 @@
 
 	// Reactive pillars — intentionally captures initial server value.
 	// Gets overwritten by handlePersonaSelected() after quiz completion.
-	// eslint-disable-next-line svelte/state-referenced-locally
 	// @ts-ignore
 	let pillars = $state(data.pillars);
 
