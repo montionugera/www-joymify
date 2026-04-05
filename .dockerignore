@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+*.md
+.cursor
+.prettierrc
+.prettierignore
+vitest.config.mjs
+tsconfig.tsbuildinfo

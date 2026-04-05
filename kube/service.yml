@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: www-joymify
+spec:
+  type: ClusterIP
+  selector:
+    app: www-joymify
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
