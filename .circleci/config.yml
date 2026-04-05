@@ -60,16 +60,19 @@ workflows:
   ci-cd-pipeline:
     jobs:
       - build-and-test:
+          context: secret
           filters:
             branches:
               only: main
       - build-and-push:
+          context: secret
           requires:
             - build-and-test
           filters:
             branches:
               only: main
       - deploy-to-cluster:
+          context: secret
           requires:
             - build-and-push
           filters:
