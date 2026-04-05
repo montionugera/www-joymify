@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: npm install -g pnpm && pnpm install --frozen-lockfile
+          command: sudo npm install -g pnpm && pnpm install --frozen-lockfile
       - run:
           name: Lint
           command: pnpm run lint
