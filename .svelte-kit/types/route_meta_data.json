@@ -1,0 +1,11 @@
+{
+	"/": [
+		"src/routes/+page.server.ts"
+	],
+	"/api/pillars": [
+		"src/routes/api/pillars/+server.ts"
+	],
+	"/api/pulse": [
+		"src/routes/api/pulse/+server.ts"
+	]
+}

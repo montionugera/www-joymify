@@ -55,7 +55,7 @@ Implement comprehensive internationalization support for English, Chinese, Japan
 const withNextIntl = require('next-intl/plugin')();
 
 module.exports = withNextIntl({
-  // Next.js config
+	// Next.js config
 });
 
 // src/lib/i18n/config.ts
@@ -69,22 +69,22 @@ export type Locale = (typeof locales)[number];
 ```json
 // src/lib/i18n/locales/en.json
 {
-  "common": {
-    "welcome": "Welcome to Joymify",
-    "login": "Login",
-    "logout": "Logout"
-  },
-  "auth": {
-    "continueWithGoogle": "Continue with Google",
-    "signIn": "Sign In",
-    "signUp": "Sign Up"
-  },
-  "home": {
-    "hero": {
-      "title": "Transform Your Experience",
-      "subtitle": "Discover amazing features"
-    }
-  }
+	"common": {
+		"welcome": "Welcome to Joymify",
+		"login": "Login",
+		"logout": "Logout"
+	},
+	"auth": {
+		"continueWithGoogle": "Continue with Google",
+		"signIn": "Sign In",
+		"signUp": "Sign Up"
+	},
+	"home": {
+		"hero": {
+			"title": "Transform Your Experience",
+			"subtitle": "Discover amazing features"
+		}
+	}
 }
 ```
 
@@ -176,25 +176,25 @@ src/
 
 ```json
 {
-  "common": {
-    "navigation": {},
-    "buttons": {},
-    "messages": {}
-  },
-  "auth": {
-    "login": {},
-    "register": {},
-    "errors": {}
-  },
-  "home": {
-    "hero": {},
-    "features": {},
-    "cta": {}
-  },
-  "dashboard": {
-    "sidebar": {},
-    "content": {}
-  }
+	"common": {
+		"navigation": {},
+		"buttons": {},
+		"messages": {}
+	},
+	"auth": {
+		"login": {},
+		"register": {},
+		"errors": {}
+	},
+	"home": {
+		"hero": {},
+		"features": {},
+		"cta": {}
+	},
+	"dashboard": {
+		"sidebar": {},
+		"content": {}
+	}
 }
 ```
 

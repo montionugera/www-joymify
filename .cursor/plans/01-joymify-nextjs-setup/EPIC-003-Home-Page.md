@@ -62,13 +62,13 @@ npm install -D @types/next-auth
 ```typescript
 // src/lib/auth.ts
 export const authConfig = {
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
-  ],
-  // ... config
+	providers: [
+		GoogleProvider({
+			clientId: process.env.GOOGLE_CLIENT_ID!,
+			clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+		})
+	]
+	// ... config
 };
 
 // src/lib/i18n/config.ts

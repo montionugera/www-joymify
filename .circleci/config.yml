@@ -8,13 +8,13 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: npm ci
+          command: npm install -g pnpm && pnpm install --frozen-lockfile
       - run:
           name: Lint
-          command: npm run lint
+          command: pnpm run lint
       - run:
           name: Type check
-          command: npm run type-check
+          command: pnpm run check
 
   build-and-push:
     docker:
