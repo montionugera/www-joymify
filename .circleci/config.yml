@@ -28,11 +28,11 @@ jobs:
           environment:
             SERVICE_NAME: www-joymify
           command: |
-            echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker build -t montionugera/$SERVICE_NAME:$CIRCLE_SHA1 .
-            docker tag montionugera/$SERVICE_NAME:$CIRCLE_SHA1 montionugera/$SERVICE_NAME:latest
-            docker push montionugera/$SERVICE_NAME:$CIRCLE_SHA1
-            docker push montionugera/$SERVICE_NAME:latest
+            echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USERNAME" --password-stdin
+            docker build -t ghcr.io/montionugera/$SERVICE_NAME:$CIRCLE_SHA1 .
+            docker tag ghcr.io/montionugera/$SERVICE_NAME:$CIRCLE_SHA1 ghcr.io/montionugera/$SERVICE_NAME:latest
+            docker push ghcr.io/montionugera/$SERVICE_NAME:$CIRCLE_SHA1
+            docker push ghcr.io/montionugera/$SERVICE_NAME:latest
 
   deploy-to-cluster:
     docker:

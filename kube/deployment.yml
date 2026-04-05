@@ -14,9 +14,11 @@ spec:
       labels:
         app: www-joymify
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: www-joymify
-          image: montionugera/${SERVICE_NAME}:${COMMIT_SHA1}
+          image: ghcr.io/montionugera/${SERVICE_NAME}:${COMMIT_SHA1}
           ports:
             - containerPort: 3000
           resources:
