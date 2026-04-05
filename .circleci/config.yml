@@ -28,7 +28,7 @@ jobs:
           environment:
             SERVICE_NAME: www-joymify
           command: |
-            echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USERNAME" --password-stdin
+            echo "$GHCR_TOKEN" | docker login ghcr.io -u "montionugera" --password-stdin
             docker build -t ghcr.io/montionugera/$SERVICE_NAME:$CIRCLE_SHA1 .
             docker tag ghcr.io/montionugera/$SERVICE_NAME:$CIRCLE_SHA1 ghcr.io/montionugera/$SERVICE_NAME:latest
             docker push ghcr.io/montionugera/$SERVICE_NAME:$CIRCLE_SHA1
